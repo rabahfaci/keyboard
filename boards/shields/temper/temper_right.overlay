@@ -19,19 +19,3 @@
         , <&pro_micro 21 GPIO_ACTIVE_HIGH>
         ;
 };
-
-/* TEMPORARY: CDC ACM UART node required by CONFIG_ZMK_USB_LOGGING (test build).
- * REVERT along with temper_right.conf before the final build. */
-&usbd {
-    cdc_acm_uart0: cdc_acm_uart0 {
-        compatible = "zephyr,cdc-acm-uart";
-        label = "CDC_ACM_0";
-    };
-};
-
-/ {
-    chosen {
-        zephyr,console = &cdc_acm_uart0;
-        zephyr,shell-uart = &cdc_acm_uart0;
-    };
-};
