@@ -161,7 +161,7 @@ layers:
     - F2
     - F3
     - F10
-  - - '&studio_unlock'
+  - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -204,3 +204,6 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+combos:
+- p: [30, 31]
+  k: '&studio_unlock'
