@@ -15,3 +15,20 @@
         , <&pro_micro 15 GPIO_ACTIVE_HIGH>
         ;
 };
+
+/* TEMPORARY: extra CDC ACM console (separate from the Studio RPC CDC ACM
+ * instance) to read raw battery ADC readings over USB serial while
+ * debugging the charge issue. REVERT once diagnosed. */
+&usbd {
+    debug_cdc_uart0: debug_cdc_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "DEBUG_CDC_0";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,console = &debug_cdc_uart0;
+        zephyr,shell-uart = &debug_cdc_uart0;
+    };
+};
