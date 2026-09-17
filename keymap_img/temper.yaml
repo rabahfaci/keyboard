@@ -11,7 +11,7 @@ layers:
     - U
     - Y
     - {t: '''', s: '"'}
-  - [A, R, S, T, G, M, N, E, I, O]
+  - [G, R, S, T, A, O, N, E, I, M]
   - - Z
     - X
     - C
@@ -27,7 +27,7 @@ layers:
     - {t: ⇧, s: ⇪}
     - SPACE
     - nav
-    - {t: default, h: toggle}
+    - fr
   game:
   - - ↹
     - Q
@@ -159,22 +159,13 @@ layers:
     - {type: held}
     - {t: ▽, type: trans}
   cmd:
-  - - ⌘Q
-    - ⌘W
-    - F
-    - Gui+P
-    - B
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - [⌘Q, ⌘W, F, Gui+P, B, Ctl+←, Ctl+→, Ctl+↑, Ctl+↓, Gui+SPACE]
   - - ⇧
     - ⌃
     - ⎇
     - ⌘
     - Gui+G
-    - {t: ▽, type: trans}
+    - Gui+↹
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -206,7 +197,7 @@ layers:
     - U
     - Y
     - {t: '''', s: '"'}
-  - [A, R, S, T, G, M, N, E, I, O]
+  - [G, R, S, T, A, O, N, E, I, M]
   - - Z
     - X
     - C
@@ -260,6 +251,43 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+  fr:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '&fr_agrave'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: '&fr_eacute_macro', s: '&fr_egrave_macro'}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - Alt+C
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
 combos:
 - p: [30, 31]
   k: '&studio_unlock'
