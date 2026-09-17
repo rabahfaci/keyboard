@@ -27,7 +27,7 @@ layers:
     - {t: ⇧, s: ⇪}
     - SPACE
     - nav
-    - fr
+    - {t: default, h: toggle}
   game:
   - - ↹
     - Q
@@ -287,7 +287,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
 combos:
 - p: [30, 31]
   k: '&studio_unlock'
