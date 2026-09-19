@@ -24,7 +24,7 @@ layers:
     - {t: '?', s: '!'}
   - - cmd
     - num
-    - DEL
+    - BSPC
     - SPACE
     - nav
     - {t: default, h: toggle}
@@ -210,7 +210,7 @@ layers:
     - {t: '?', s: '!'}
   - - cmd_win
     - num
-    - DEL
+    - BSPC
     - SPACE
     - nav
     - {t: default_win, h: toggle}
@@ -294,4 +294,7 @@ combos:
   l: [default, default_win]
 - p: [32, 33]
   k: RET
+  l: [default, default_win]
+- p: [32, 35]
+  k: DEL
   l: [default, default_win]
