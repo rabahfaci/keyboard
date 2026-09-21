@@ -22,49 +22,7 @@ layers:
     - {t: ',', s: ;}
     - {t: ., s: ':'}
     - {t: '?', s: '!'}
-  - - cmd
-    - num
-    - BSPC
-    - SPACE
-    - nav
-    - {t: default, h: toggle}
-  game:
-  - - ↹
-    - Q
-    - W
-    - E
-    - R
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⇧
-    - A
-    - S
-    - D
-    - F
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ⌃
-    - Z
-    - X
-    - C
-    - V
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ESC
-    - {t: ▽, type: trans}
-    - SPACE
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+  - [cmd, num, BSPC, SPACE, nav, ⇧]
   num:
   - - '~'
     - '@'
@@ -131,7 +89,7 @@ layers:
     - {type: held}
     - {t: ▽, type: trans}
   fun:
-  - - {t: game, h: toggle}
+  - - {t: ▽, type: trans}
     - MUTE
     - VOL DN
     - VOL UP
@@ -208,12 +166,7 @@ layers:
     - {t: ',', s: ;}
     - {t: ., s: ':'}
     - {t: '?', s: '!'}
-  - - cmd_win
-    - num
-    - BSPC
-    - SPACE
-    - nav
-    - {t: default_win, h: toggle}
+  - [cmd_win, num, BSPC, SPACE, nav, ⇧]
   cmd_win:
   - - Ctl+Q
     - Ctl+W
@@ -282,11 +235,11 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
+  - - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
 combos:
 - p: [30, 31]
@@ -294,6 +247,9 @@ combos:
   l: [default, default_win]
 - p: [32, 33]
   k: RET
+  l: [default, default_win]
+- p: [31, 32]
+  k: ESC
   l: [default, default_win]
 - p: [32, 35]
   k: DEL
