@@ -10,14 +10,13 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-#define GAME 1
-#define NUM 2
-#define NAV 3
-#define FUN 4
-#define CMD 5
-#define DEFAULT_WIN 6
-#define CMD_WIN 7
-#define FR 8
+#define NUM 1
+#define NAV 2
+#define FUN 3
+#define CMD 4
+#define DEFAULT_WIN 5
+#define CMD_WIN 6
+#define FR 7
 
 # define ______ &trans
 
@@ -27,6 +26,10 @@
         tri_layer {
             if-layers = <NUM NAV>;
             then-layer = <FUN>;
+        };
+        accents_layer {
+            if-layers = <CMD NAV>;
+            then-layer = <FR>;
         };
     };
     combos {
@@ -41,6 +44,12 @@
             timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&kp RET>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_escape {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp ESC>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_delete_forward {
@@ -100,6 +109,12 @@
             bindings = <&kp AMPS>, <&kp PIPE>;
             mods = <(MOD_LSFT)>;
         };
+        quote_morph: quote_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp APOS>, <&kp DQT>;
+            mods = <(MOD_LSFT)>;
+        };
         /* French accents: macOS Option dead-key sequences (Option+E, E = é / Option+`, E = è).
          * Mac-mode only -- Alt means something else entirely on Windows/Linux. */
         fr_eacute_macro: fr_eacute_macro {
@@ -130,26 +145,13 @@
                 default_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &kp APOS
+        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &quote_morph
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp G         &kp R         &kp S         &kp T         &kp A             &kp O         &kp N         &kp E         &kp I         &kp M
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H      &comma_semi    &dot_colon    &qmrk_excl
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &mo CMD       &mo NUM       &kp BSPC         &kp SPACE      &mo NAV     &to DEFAULT
-//                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-                        >;
-                };
-                game_layer {
-                        bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        &kp TAB       &kp Q         &kp W         &kp E         &kp R             ______        ______        ______        ______        ______  
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp LSHFT      &kp A         &kp S         &kp D         &kp F             ______        ______        ______        ______        ______
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp LCTRL      &kp Z         &kp X         &kp C         &kp V             ______        ______        ______        ______        ______
-// ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                    &kp ESC       ______      &kp SPACE           ______        ______        ______
+                                   &mo CMD       &mo NUM       &kp BSPC         &kp SPACE      &mo NAV     &kp LSHFT
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -184,7 +186,7 @@
                 fun_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &tog GAME    &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &out OUT_USB    &to DEFAULT_WIN   &kp F7        &kp F8        &kp F9       &kp F12
+      ______      &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &out OUT_USB    &to DEFAULT_WIN   &kp F7        &kp F8        &kp F9       &kp F12
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &to DEFAULT     &kp F4        &kp F5        &kp F6       &kp F11
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -212,13 +214,13 @@
                 default_win_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &kp APOS
+        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &quote_morph
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp G         &kp R         &kp S         &kp T         &kp A             &kp O         &kp N         &kp E         &kp I         &kp M
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H      &comma_semi    &dot_colon    &qmrk_excl
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &mo CMD_WIN     &mo NUM       &kp BSPC         &kp SPACE      &mo NAV     &to DEFAULT_WIN
+                                 &mo CMD_WIN     &mo NUM       &kp BSPC         &kp SPACE      &mo NAV     &kp LSHFT
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
