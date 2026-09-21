@@ -112,7 +112,7 @@
         quote_morph: quote_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp APOS>, <&kp DQT>;
+            bindings = <&kp DQT>, <&kp APOS>;
             mods = <(MOD_LSFT)>;
         };
         /* French accents: macOS Option dead-key sequences (Option+E, E = é / Option+`, E = è).
