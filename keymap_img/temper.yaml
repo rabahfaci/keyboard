@@ -251,6 +251,18 @@ combos:
 - p: [31, 32]
   k: ESC
   l: [default, default_win]
+- p: [30, 35]
+  k: {t: cmd, h: toggle}
+  l: [default, cmd]
+- p: [30, 35]
+  k: {t: cmd_win, h: toggle}
+  l: [default_win, cmd_win]
+- p: [31, 35]
+  k: {t: num, h: toggle}
+  l: [default, default_win, num]
+- p: [34, 35]
+  k: {t: nav, h: toggle}
+  l: [default, default_win, nav]
 - p: [32, 35]
   k: DEL
   l: [default, default_win]
