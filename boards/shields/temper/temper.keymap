@@ -220,17 +220,17 @@
             bindings = <&macro_tap &kp LA(GRAVE) &kp A>;
         };
         /* Uppercase variants: same dead-key sequence, Shift held on the letter tap. */
-        fr_EACUTE_macro: fr_EACUTE_macro {
+        fr_eacute_upper_macro: fr_eacute_upper_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LA(E) &kp LS(E)>;
         };
-        fr_EGRAVE_macro: fr_EGRAVE_macro {
+        fr_egrave_upper_macro: fr_egrave_upper_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LA(GRAVE) &kp LS(E)>;
         };
-        fr_AGRAVE_macro: fr_AGRAVE_macro {
+        fr_agrave_upper_macro: fr_agrave_upper_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LA(GRAVE) &kp LS(A)>;
@@ -239,19 +239,19 @@
         eacute_case: eacute_case {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&fr_eacute_macro>, <&fr_EACUTE_macro>;
+            bindings = <&fr_eacute_macro>, <&fr_eacute_upper_macro>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         egrave_case: egrave_case {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&fr_egrave_macro>, <&fr_EGRAVE_macro>;
+            bindings = <&fr_egrave_macro>, <&fr_egrave_upper_macro>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         agrave_case: agrave_case {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&fr_agrave>, <&fr_AGRAVE_macro>;
+            bindings = <&fr_agrave>, <&fr_agrave_upper_macro>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ccedil_case: ccedil_case {
