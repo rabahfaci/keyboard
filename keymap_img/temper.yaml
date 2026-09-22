@@ -262,6 +262,12 @@ combos:
 - p: [17, 18]
   k: '&fr_egrave_macro'
   l: [default, default_win]
+- p: [13, 14]
+  k: '&fr_agrave'
+  l: [default, default_win]
+- p: [13, 22]
+  k: Alt+C
+  l: [default, default_win]
 - p: [32, 35]
   k: DEL
   l: [default, default_win]
