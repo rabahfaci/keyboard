@@ -256,6 +256,12 @@ combos:
 
     Lock'
   l: [default, default_win]
+- p: [16, 17]
+  k: '&fr_eacute_macro'
+  l: [default, default_win]
+- p: [17, 18]
+  k: '&fr_egrave_macro'
+  l: [default, default_win]
 - p: [32, 35]
   k: DEL
   l: [default, default_win]
