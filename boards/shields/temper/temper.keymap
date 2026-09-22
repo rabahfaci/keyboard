@@ -73,6 +73,18 @@
             bindings = <&fr_egrave_macro>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
+        combo_agrave {
+            timeout-ms = <40>;
+            key-positions = <13 14>;
+            bindings = <&fr_agrave>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_ccedil {
+            timeout-ms = <40>;
+            key-positions = <13 22>;
+            bindings = <&kp LA(C)>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
         combo_delete_forward {
             timeout-ms = <50>;
             key-positions = <32 35>;
