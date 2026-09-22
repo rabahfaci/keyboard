@@ -269,31 +269,31 @@ combos:
   k: {t: Alt+C, s: Alt+Sft+C}
   l: [default, default_win]
 - p: [14, 24]
-  k: '&fr_acirc'
+  k: {t: '&fr_acirc', s: '&fr_acirc_upper_macro'}
   l: [default, default_win]
 - p: [17, 7]
-  k: '&fr_ecirc'
+  k: {t: '&fr_ecirc', s: '&fr_ecirc_upper_macro'}
   l: [default, default_win]
 - p: [18, 8]
-  k: '&fr_icirc'
+  k: {t: '&fr_icirc', s: '&fr_icirc_upper_macro'}
   l: [default, default_win]
 - p: [15, 25]
-  k: '&fr_ocirc'
+  k: {t: '&fr_ocirc', s: '&fr_ocirc_upper_macro'}
   l: [default, default_win]
 - p: [7, 27]
-  k: '&fr_ucirc'
+  k: {t: '&fr_ucirc', s: '&fr_ucirc_upper_macro'}
   l: [default, default_win]
 - p: [7, 8]
-  k: '&fr_ugrave'
+  k: {t: '&fr_ugrave', s: '&fr_ugrave_upper_macro'}
   l: [default, default_win]
 - p: [17, 27]
-  k: '&fr_euml'
+  k: {t: '&fr_euml', s: '&fr_euml_upper_macro'}
   l: [default, default_win]
 - p: [18, 28]
-  k: '&fr_iuml'
+  k: {t: '&fr_iuml', s: '&fr_iuml_upper_macro'}
   l: [default, default_win]
 - p: [7, 6]
-  k: '&fr_uuml'
+  k: {t: '&fr_uuml', s: '&fr_uuml_upper_macro'}
   l: [default, default_win]
 - p: [32, 35]
   k: DEL
