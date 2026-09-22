@@ -257,16 +257,43 @@ combos:
     Lock'
   l: [default, default_win]
 - p: [16, 17]
-  k: '&fr_eacute_macro'
+  k: {t: '&fr_eacute_macro', s: '&fr_EACUTE_macro'}
   l: [default, default_win]
 - p: [17, 18]
-  k: '&fr_egrave_macro'
+  k: {t: '&fr_egrave_macro', s: '&fr_EGRAVE_macro'}
   l: [default, default_win]
 - p: [13, 14]
-  k: '&fr_agrave'
+  k: {t: '&fr_agrave', s: '&fr_AGRAVE_macro'}
   l: [default, default_win]
 - p: [13, 22]
-  k: Alt+C
+  k: {t: Alt+C, s: Alt+Sft+C}
+  l: [default, default_win]
+- p: [14, 24]
+  k: '&fr_acirc'
+  l: [default, default_win]
+- p: [17, 7]
+  k: '&fr_ecirc'
+  l: [default, default_win]
+- p: [18, 8]
+  k: '&fr_icirc'
+  l: [default, default_win]
+- p: [15, 25]
+  k: '&fr_ocirc'
+  l: [default, default_win]
+- p: [7, 27]
+  k: '&fr_ucirc'
+  l: [default, default_win]
+- p: [7, 8]
+  k: '&fr_ugrave'
+  l: [default, default_win]
+- p: [17, 27]
+  k: '&fr_euml'
+  l: [default, default_win]
+- p: [18, 28]
+  k: '&fr_iuml'
+  l: [default, default_win]
+- p: [7, 6]
+  k: '&fr_uuml'
   l: [default, default_win]
 - p: [32, 35]
   k: DEL
