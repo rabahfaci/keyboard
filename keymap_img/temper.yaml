@@ -222,7 +222,7 @@ layers:
     - '&fr_agrave'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: '&fr_eacute_macro', s: '&fr_egrave_macro'}
+    - '&fr_eacute_macro'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
