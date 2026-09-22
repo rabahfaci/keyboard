@@ -64,25 +64,79 @@
         combo_eacute {
             timeout-ms = <40>;
             key-positions = <16 17>;
-            bindings = <&fr_eacute_macro>;
+            bindings = <&eacute_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_egrave {
             timeout-ms = <40>;
             key-positions = <17 18>;
-            bindings = <&fr_egrave_macro>;
+            bindings = <&egrave_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_agrave {
             timeout-ms = <40>;
             key-positions = <13 14>;
-            bindings = <&fr_agrave>;
+            bindings = <&agrave_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_ccedil {
             timeout-ms = <40>;
             key-positions = <13 22>;
-            bindings = <&kp LA(C)>;
+            bindings = <&ccedil_case>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_acirc {
+            timeout-ms = <40>;
+            key-positions = <14 24>;
+            bindings = <&fr_acirc>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_ecirc {
+            timeout-ms = <40>;
+            key-positions = <17 7>;
+            bindings = <&fr_ecirc>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_icirc {
+            timeout-ms = <40>;
+            key-positions = <18 8>;
+            bindings = <&fr_icirc>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_ocirc {
+            timeout-ms = <40>;
+            key-positions = <15 25>;
+            bindings = <&fr_ocirc>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_ucirc {
+            timeout-ms = <40>;
+            key-positions = <7 27>;
+            bindings = <&fr_ucirc>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_ugrave {
+            timeout-ms = <40>;
+            key-positions = <7 8>;
+            bindings = <&fr_ugrave>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_euml {
+            timeout-ms = <40>;
+            key-positions = <17 27>;
+            bindings = <&fr_euml>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_iuml {
+            timeout-ms = <40>;
+            key-positions = <18 28>;
+            bindings = <&fr_iuml>;
+            layers = <DEFAULT DEFAULT_WIN>;
+        };
+        combo_uuml {
+            timeout-ms = <40>;
+            key-positions = <7 6>;
+            bindings = <&fr_uuml>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_delete_forward {
@@ -170,6 +224,94 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LA(GRAVE) &kp A>;
+        };
+        /* Uppercase variants: same dead-key sequence, Shift held on the letter tap. */
+        fr_EACUTE_macro: fr_EACUTE_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(E) &kp LS(E)>;
+        };
+        fr_EGRAVE_macro: fr_EGRAVE_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(GRAVE) &kp LS(E)>;
+        };
+        fr_AGRAVE_macro: fr_AGRAVE_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(GRAVE) &kp LS(A)>;
+        };
+        /* Case-aware wrappers bound directly to the combos below. */
+        eacute_case: eacute_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_eacute_macro>, <&fr_EACUTE_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        egrave_case: egrave_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_egrave_macro>, <&fr_EGRAVE_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        agrave_case: agrave_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_agrave>, <&fr_AGRAVE_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ccedil_case: ccedil_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LA(C)>, <&kp LA(LS(C))>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        /* Remaining French accents, lowercase only -- rare enough (<0.25% each)
+         * that a Shift-case variant isn't worth the extra behavior. */
+        fr_acirc: fr_acirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp A>;
+        };
+        fr_ecirc: fr_ecirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp E>;
+        };
+        fr_icirc: fr_icirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp I>;
+        };
+        fr_ocirc: fr_ocirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp O>;
+        };
+        fr_ucirc: fr_ucirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp U>;
+        };
+        fr_ugrave: fr_ugrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(GRAVE) &kp U>;
+        };
+        fr_euml: fr_euml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp E>;
+        };
+        fr_iuml: fr_iuml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp I>;
+        };
+        fr_uuml: fr_uuml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp U>;
         };
     };
         keymap {
