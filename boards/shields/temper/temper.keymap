@@ -88,55 +88,55 @@
         combo_acirc {
             timeout-ms = <40>;
             key-positions = <14 24>;
-            bindings = <&fr_acirc>;
+            bindings = <&acirc_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_ecirc {
             timeout-ms = <40>;
             key-positions = <17 7>;
-            bindings = <&fr_ecirc>;
+            bindings = <&ecirc_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_icirc {
             timeout-ms = <40>;
             key-positions = <18 8>;
-            bindings = <&fr_icirc>;
+            bindings = <&icirc_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_ocirc {
             timeout-ms = <40>;
             key-positions = <15 25>;
-            bindings = <&fr_ocirc>;
+            bindings = <&ocirc_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_ucirc {
             timeout-ms = <40>;
             key-positions = <7 27>;
-            bindings = <&fr_ucirc>;
+            bindings = <&ucirc_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_ugrave {
             timeout-ms = <40>;
             key-positions = <7 8>;
-            bindings = <&fr_ugrave>;
+            bindings = <&ugrave_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_euml {
             timeout-ms = <40>;
             key-positions = <17 27>;
-            bindings = <&fr_euml>;
+            bindings = <&euml_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_iuml {
             timeout-ms = <40>;
             key-positions = <18 28>;
-            bindings = <&fr_iuml>;
+            bindings = <&iuml_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_uuml {
             timeout-ms = <40>;
             key-positions = <7 6>;
-            bindings = <&fr_uuml>;
+            bindings = <&uuml_case>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
         combo_delete_forward {
@@ -306,6 +306,106 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LA(U) &kp U>;
+        };
+        /* Uppercase variants + case-aware wrappers for the 9 rare accents above. */
+        fr_acirc_upper_macro: fr_acirc_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp LS(A)>;
+        };
+        fr_ecirc_upper_macro: fr_ecirc_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp LS(E)>;
+        };
+        fr_icirc_upper_macro: fr_icirc_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp LS(I)>;
+        };
+        fr_ocirc_upper_macro: fr_ocirc_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp LS(O)>;
+        };
+        fr_ucirc_upper_macro: fr_ucirc_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(I) &kp LS(U)>;
+        };
+        fr_ugrave_upper_macro: fr_ugrave_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(GRAVE) &kp LS(U)>;
+        };
+        fr_euml_upper_macro: fr_euml_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp LS(E)>;
+        };
+        fr_iuml_upper_macro: fr_iuml_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp LS(I)>;
+        };
+        fr_uuml_upper_macro: fr_uuml_upper_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(U) &kp LS(U)>;
+        };
+        acirc_case: acirc_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_acirc>, <&fr_acirc_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ecirc_case: ecirc_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_ecirc>, <&fr_ecirc_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        icirc_case: icirc_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_icirc>, <&fr_icirc_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ocirc_case: ocirc_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_ocirc>, <&fr_ocirc_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ucirc_case: ucirc_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_ucirc>, <&fr_ucirc_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ugrave_case: ugrave_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_ugrave>, <&fr_ugrave_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        euml_case: euml_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_euml>, <&fr_euml_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        iuml_case: iuml_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_iuml>, <&fr_iuml_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        uuml_case: uuml_case {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&fr_uuml>, <&fr_uuml_upper_macro>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
         keymap {
