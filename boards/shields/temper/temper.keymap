@@ -52,6 +52,32 @@
             bindings = <&kp ESC>;
             layers = <DEFAULT DEFAULT_WIN>;
         };
+        /* Shift (D3) + a layer thumb toggles that layer on/off. The layers list must
+         * include the layer itself, otherwise the combo is inactive once it is on. */
+        combo_lock_cmd {
+            timeout-ms = <40>;
+            key-positions = <30 35>;
+            bindings = <&tog CMD>;
+            layers = <DEFAULT CMD>;
+        };
+        combo_lock_cmd_win {
+            timeout-ms = <40>;
+            key-positions = <30 35>;
+            bindings = <&tog CMD_WIN>;
+            layers = <DEFAULT_WIN CMD_WIN>;
+        };
+        combo_lock_num {
+            timeout-ms = <40>;
+            key-positions = <31 35>;
+            bindings = <&tog NUM>;
+            layers = <DEFAULT DEFAULT_WIN NUM>;
+        };
+        combo_lock_nav {
+            timeout-ms = <40>;
+            key-positions = <34 35>;
+            bindings = <&tog NAV>;
+            layers = <DEFAULT DEFAULT_WIN NAV>;
+        };
         combo_delete_forward {
             timeout-ms = <50>;
             key-positions = <32 35>;
