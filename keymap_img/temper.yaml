@@ -10,8 +10,17 @@ layers:
     - L
     - U
     - Y
-    - {t: '"', s: ''''}
-  - [G, R, S, T, A, O, N, E, I, M]
+    - {t: ., s: '"'}
+  - - G
+    - R
+    - S
+    - T
+    - A
+    - O
+    - N
+    - E
+    - I
+    - {t: (, s: )}
   - - Z
     - X
     - C
@@ -19,8 +28,8 @@ layers:
     - V
     - K
     - H
-    - {t: ',', s: ;}
-    - {t: ., s: ':'}
+    - M
+    - {t: ',', s: ':'}
     - {t: '?', s: '!'}
   - [cmd, num, BSPC, SPACE, nav, ⇧]
   num:
